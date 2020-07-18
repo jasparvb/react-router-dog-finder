@@ -14,7 +14,7 @@ function App(props) {
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav/>
+        <Nav dogs={props.dogs}/>
         <Routes dogs={props.dogs}/>
       </BrowserRouter>
     </div>
