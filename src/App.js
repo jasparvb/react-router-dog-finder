@@ -1,5 +1,9 @@
 import React from 'react';
+import { BrowserRouter } from "react-router-dom";
 import './App.css';
+import Nav from './Nav';
+import Routes from './Routes';
+
 import whiskey from "./whiskey.jpg";
 import duke from "./duke.jpg";
 import perry from "./perry.jpg";
@@ -8,16 +12,12 @@ import tubby from "./tubby.jpg";
 
 function App(props) {
   return (
-    <Switch>
-      <Nav />
-      <Route exact path="/dogs" >
-        <DogList dogs={props.dogs} />
-      </Route>
-      <Route path="/dogs/:name" >
-        <DogDetails />
-      </Route>
-      <Redirect to="/dogs" />
-    </Switch>
+    <div className="App">
+      <BrowserRouter>
+        <Nav/>
+        <Routes dogs={props.dogs}/>
+      </BrowserRouter>
+    </div>
   );
 }
 
